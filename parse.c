@@ -542,6 +542,14 @@ int input_number(void) {
   }
 #endif
 
+#if defined(SPC700)
+  /* for bit operation operator(example: MOV1 C,$1234.0) */
+  if (label[k-2] == '.') {
+	  k -= 2;
+	  i -= 2;
+  }
+#endif
+
   label[k] = 0;
 
   /* expand e.g., \1 and \@ */
