@@ -3310,12 +3310,6 @@ Opcodes that make relative label references:
 
 14.7. SPC-700
 
-Note that you'll have to put an exclamation mark before a 16-bit value.
-For example,
-
-CALL !Main
-AND  A, !$1000
-
 Opcodes that make relative label references:
 
   BCC
