@@ -5,7 +5,7 @@
 
 /*
  * case 0 - Non parameter opcodes
- * ( [ADC A,(X)], [RET], [ASL A] etc... )
+ * ( [ADC A,(X)], [CMP (X),(Y)], [ASL A] etc... )
  */
 case 0:
 for ( ; x < OP_SIZE_MAX; inz++, x++) {
