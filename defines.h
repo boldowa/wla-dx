@@ -416,14 +416,13 @@ struct optcode {
 
 /*
  * 0 - plain text   8b,16b
- * 1 - reg   8b
- * 2 - 4-bits value
- * 3 - x
- * 5 - "??? R*,#x", 0x?0, 5
- * 6 - "??? R*,#?", 0x?0, 6
- * 7 - "??? R*,?", 0x???0, 7 (LM etc..)
- * 8 - "??? R*,x", 0x???0, 8 (LMS etc..)
- * 9 - "??? R*,R*", 0x?0?0, 9 (MOVE Rn=>Rn)
+ * 1 - register op
+ * 2 - 4-bits value op
+ * 3 - branch op
+ * 4 - IBT
+ * 5 - IWT
+ * 6 - LM, LMS, SM, SMS
+ * 7 - MOVE, MOVES
  */
 
 #define OP_SIZE_MAX 12

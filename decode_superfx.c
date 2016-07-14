@@ -220,6 +220,7 @@ case 4:
  * case 5: regisrer and 16bits #value
  *    IWT only
  * case 6: register and 16bits rabel addr value
+ *    LM, LMS, SM, SMS
  */
 case 5:
 case 6:
@@ -279,7 +280,7 @@ case 6:
   break;
 
 /**
- * case 9: Register transfer optcodes
+ * case 7: Register transfer optcodes
  *  MOVE R*,R*  and MOVES R*,R*
  */
 case 9:

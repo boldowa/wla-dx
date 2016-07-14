@@ -65,8 +65,8 @@ struct optcode opt_table[] = {
   { "LSR", 0x03, 0, ALT0 },
 
   { "MERGE", 0x70, 0, ALT0 },
-  { "MOVE R*,R*", 0x1020, 9, ALT0 },
-  { "MOVES R*,R*", 0xb020, 9, ALT0 },
+  { "MOVE R*,R*", 0x1020, 7, ALT0 },
+  { "MOVES R*,R*", 0xb020, 7, ALT0 },
   { "MULT R*", 0x80, 1, ALT0 },
   { "MULT #*", 0x80, 2, ALT2 },
 
