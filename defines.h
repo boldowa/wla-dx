@@ -406,6 +406,54 @@ struct optcode {
 #endif
 
 
+/**************************************************************/
+/* Super FX                                                   */
+/**************************************************************/
+
+#ifdef SUPERFX
+
+/* opcode types */
+
+/*
+ * 0 - plain text   8b,16b
+ * 1 - reg   8b
+ * 2 - 4-bits value
+ * 3 - x
+ * 5 - "??? R*,#x", 0x?0, 5
+ * 6 - "??? R*,#?", 0x?0, 6
+ * 7 - "??? R*,?", 0x???0, 7 (LM etc..)
+ * 8 - "??? R*,x", 0x???0, 8 (LMS etc..)
+ * 9 - "??? R*,R*", 0x?0?0, 9 (MOVE Rn=>Rn)
+ */
+
+#define OP_SIZE_MAX 12
+
+/**
+ * ALT Mode
+ */
+#define ALT0 0x00	/* Non-ALT opcode */
+#define ALT1 0x3d	/* ALT1 opcode */
+#define ALT2 0x3e	/* ALT2 opcode */
+#define ALT3 0x3f	/* ALT3 opcode */
+
+#ifdef AMIGA
+struct optcode {
+  char *op;
+  int  hex;
+  short int type;
+  short int alt;
+};
+#else
+struct optcode {
+  char *op;
+  int  hex;
+  int  type;
+  int  alt;
+};
+#endif
+
+#endif
+
 #define DEFINITION_TYPE_VALUE         0
 #define DEFINITION_TYPE_STRING        1
 #define DEFINITION_TYPE_STACK         2

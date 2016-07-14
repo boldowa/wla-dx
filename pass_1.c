@@ -163,6 +163,10 @@ __far /* put the following big table in the FAR data section */
 #include "opcodes_huc6280.c"
 #include "opcodes_huc6280_tables.c"
 #endif
+#ifdef SUPERFX
+#include "opcodes_superfx.c"
+#include "opcodes_superfx_tables.c"
+#endif
 
 
 #define no_library_files(name)\
@@ -727,6 +731,9 @@ int evaluate_token(void) {
   int r = 0, s, t = 0, u = 0;
   char labely[256];
 #endif
+#ifdef SUPERFX
+  int e = 0, v = 0;
+#endif
 
   
   /* is it a directive? */
@@ -784,6 +791,10 @@ int evaluate_token(void) {
   for (f = opcode_n[(unsigned int)tmp[0]]; f > 0; f--) {
     for (inz = 0, d = SUCCEEDED; inz < OP_SIZE_MAX; inz++) {
       if (tmp[inz] == 0 && opt_tmp->op[inz] == 0 && buffer[i] == 0x0A) {
+#ifdef SUPERFX
+        if (opt_tmp->alt != ALT0)
+          output_assembled_opcode(opt_tmp, "d%d ", opt_tmp->alt);
+#endif
         if (opt_tmp->type == 0)
           output_assembled_opcode(opt_tmp, "d%d ", opt_tmp->hex);
         else
@@ -837,6 +848,9 @@ int evaluate_token(void) {
 #endif
 #ifdef HUC6280
 #include "decode_huc6280.c"
+#endif
+#ifdef SUPERFX
+#include "decode_superfx.c"
 #endif
 
     }

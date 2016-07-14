@@ -125,3 +125,9 @@ add_executable(wla-z80 ${CFILES})
 set_target_properties (wla-z80 PROPERTIES COMPILE_DEFINITIONS "Z80" )
 add_dependencies(wla-z80 Z80_table)
 add_custom_command(TARGET wla-z80 POST_BUILD COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/gen_Z80*")
+
+# SUPERFX
+add_executable(wla-superfx ${CFILES})
+set_target_properties (wla-superfx PROPERTIES COMPILE_DEFINITIONS "SUPERFX" )
+add_dependencies(wla-superfx SUPERFX_table)
+add_custom_command(TARGET wla-superfx POST_BUILD COMMAND ${CMAKE_COMMAND} -E remove "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/gen_SUPERFX*")

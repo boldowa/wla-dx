@@ -115,3 +115,11 @@ runTest sdsc_test
 runTest sms_test
 runTest ram_sections
 cd ..
+
+#####################################################################
+# SuperFX
+#####################################################################
+
+changePlatform superfx
+runTest linker_test
+cd ..

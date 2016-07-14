@@ -32,6 +32,9 @@ char outname[] = "../opcodes_spc700_tables.c";
 #elif defined(HUC6280)
 char outname[] = "../opcodes_huc6280_tables.c";
 #include "../opcodes_huc6280.c"
+#elif defined(SUPERFX)
+char outname[] = "../opcodes_superfx_tables.c";
+#include "../opcodes_superfx.c"
 #endif
 
 

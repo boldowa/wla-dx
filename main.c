@@ -60,6 +60,9 @@ char version_string[] = "$VER: WLA-SPC700 9.7 (05.02.2016)";
 #ifdef HUC6280
 char version_string[] = "$VER: WLA-HuC6280 9.7 (05.02.2016)";
 #endif
+#ifdef SUPERFX
+char version_string[] = "$VER: WLA-SuperFX 9.7 (13.07.2016)";
+#endif
 #endif
 
 char wla_version[] = "9.7";
@@ -155,6 +158,9 @@ int main(int argc, char *argv[]) {
 #endif
 #ifdef HUC6280
     printf("\nWLA HuC6280 Macro Assembler v9.7b\n");
+#endif
+#ifdef SUPERFX
+    printf("\nWLA SuperFX Macro Assembler v9.7b\n");
 #endif
     printf("Written by Ville Helin in 1998-2008 - In GitHub since 2014: https://github.com/vhelin/wla-dx\n");
     printf("USAGE: %s [OPTIONS] <ASM FILE>\n\n", argv[0]);
